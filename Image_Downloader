@@ -1,0 +1,18 @@
+from bs4 import BeautifulSoup
+import requests
+import os
+from simple_image_download import simple_image_download as smp
+
+image = smp.simple_image_download
+
+#If you want, you can use a web scraper to search the internet for a list of animal species. For now I have a string composed of animals species.
+y = "Aardvark Aardwolf African_Elephant African Tree Pangolin Alligator Alpaca Anteater Antelope Ape Arabian_Horse Armadillo Arthropod Asian_Elephant Aye-Aye Baboon Badger Bandicoot Bat(s) Bearded_Dragon Beaver_Beluga_Whale Bengal_Tiger Big-Horned_Sheep Billy_Goat Bird(s) Bison Black_Bear Black_Footed_Rhino Black_Howler_Monkey Black_Rhino Blacktip_Reef_Shark Blue_Shark Blue_Whale Boar Bob-Cat Bonobo Bottlenose_Dolphin Bottlenose_Whale Brown_Bear Buffalo Bull bullfrog CaimanLizard Camel CapuchinMonkey Capybara Caribou Cat(s) Cattle Cheetah Chimpanzee Chinchilla Chipmunk Common Dolphin Common Seal Coral(s) Anemone(s) Cougar Cow(s) Coyote Crocodile Crustacean(s) DartFrog Deer Degus Dik-Dik Dingo Dog(s) Dogfish_Shark Dolphin Donkey DoorMouse Dormouse DraftHorse Duckbill_Platypus Dugong DuskyShark Elephant Elephant_Seal Elk Ermine Eurasian_Lynx Ferret Fish(es) Florida_Panther Flying Fox Fox Fresh_Water_Crocodile Frog Fur_Seal Iguana Shark Tortoise Gazelle Gecko Giant_Anteater Giant_Panda Gibbon Giraffe Goat Gopher Gorilla Gray_Fox Gray_Nurse_Shark Gray_Reef_Shark Gray_Whale Great_White_Shark Green_Poison_Dart_Frog Green_Sea_Turtle Grizzly_Bear Groundhog Guinea Pig Hairy-Nosed Wombat Hammerhead Shark Harbor Porpoise Harbor Seal Hare Harp Seal Hawaiian_Monk_Seal Hedgehog Hippopotamus Horn_Shark Horse(s) Howler Monkey Humpback Whale Hyena Hyrax Iguana Iguanodon Impala Insect(s) Irrawaddy Dolphin Jackal Jackrabbit Jaguar Jellyfish Kangaroo Kermode Bear Killer Whale Koala Komodo Dragon Kookaburra Lama Lamb Lancelet Least Weasel Leatherback Sea Turtle Lemming Lemon Shark Lemur Leopard Leopard Gecko Leopard Seal Leopard Shark Lion Llama Loggerhead_Turtles Lynx Mako_Shark Manatee Manta Ray Mantis Marbled Salamander Marmot Marsupial(s) Meerkat Melon-Headed_Whale Donkey Mink Mole Mole_Salamander Mollusk(s) Mongoose Monitor_Lizard Monk_Seal Monkey Moose Mountain_Lion Mouse Mule Muskox Muskrat NakedMoleRat Narwhal Nautilus Newt NorthernRightWhale NurseShark Nutria Nyala Ocelot Octopus Okapi Opossum Orangutan Orca Otter Ox Panda Panther Pig PilotWhale PineMarten Platypus PolarBear Porcupine Porpoise Possum Potbellied Pig Potto PrairieDog Puma PygmyHippopotamus Quokkas Quolls Rabbit Raccoon Rat Ray RedFox RedKangaroo RedPanda Red-Eyed TreeFrog ReefShark Reindeer Rhino Rhinoceros RightWhale RingedSeal RiverDolphin Salamander Sandbar Shark ScallopedHammerheadShark Sea Lion Sea Turtles Seal Sei Whale Shark Sheep SiberianTiger SilkyShark Skink Skunk Sloth Snake(s) SnowFox SnowHare SnowLeopard SnowMonkey SomaliSpectacledBear SpermWhale SpiderMonkey SpinyDogfish Shark SpottedDolphinSquirrel Star-NosedMole StellarSeaLion StripedDolphin SunBear Takin Tamarin Tapir TasmanianDevil Tasmanian Tiger Terrapin ThresherShark Tiger TigerSalamander TigerShark Topi Tortoise TreeFrog Turtle Uakari VampireBat VancouverIslandMarmot VervetMonkey Vicuna Vole Wallaby Walrus Warthog WaterBuffalo Weasel WhaleShark Whale(s) White Rhino WhiteTailedDeer White-BeakedDolphin WhitetipReefShark Wildcat Wildebeest WobbegongShark Wolf Wolverine Wombat Woodchuck Yak Yellow-BelliedMarmot Zebra Zebu Zorilla"
+b = y.split()
+for x in b:
+    if x == "Common" or "Harbor " or "Hairy-Nosed" or "Harbor":
+        b.pop(b.index(x))
+
+picnum = 500
+
+for x in b:
+    image().download(x, picnum, extensions={'.jpg', '.png'})

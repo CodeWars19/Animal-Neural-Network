@@ -1,4 +1,6 @@
-# Animal-Neural-Network: An image classifier neural network which is capable of recognizing hundreds of animals. Built on TensorFlow and scrapes the internet with simpleimagedownloader.
+# Animal-Neural-Network
+
+#An image classifier neural network which is capable of recognizing hundreds of animals. Built on TensorFlow and scrapes the internet with simpleimagedownloader.
 
 #Pre-requisites:
 
